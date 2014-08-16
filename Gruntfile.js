@@ -77,15 +77,6 @@ module.exports = function (grunt) {
                         '<%= config.app %>'
                     ]
                 }
-            },
-            test: {
-                options: {
-                    open: false,
-                    base: [
-                        'test',
-                        '<%= config.app %>'
-                    ]
-                }
             }
         },
 
@@ -116,14 +107,6 @@ module.exports = function (grunt) {
                 '!<%= config.app %>/scripts/vendor/*',
                 'test/spec/{,*/}*.js'
             ]
-        },
-        mocha: {
-            all: {
-                options: {
-                    run: true,
-                    urls: ['http://localhost:<%= connect.options.port %>/index.html']
-                }
-            }
         },
 
         // Automatically inject Bower components into the HTML file
@@ -253,8 +236,6 @@ module.exports = function (grunt) {
             dist: [
                 'imagemin',
                 'svgmin'
-            ],
-            test: [
             ]
         },
 
@@ -303,11 +284,6 @@ module.exports = function (grunt) {
         ]);
     });
 
-    grunt.registerTask('test', [
-        'connect:test',
-        'mocha'
-    ]);
-
     grunt.registerTask('build', [
         'clean:dist',
         'chromeManifest:dist',
@@ -323,7 +299,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('default', [
         'jshint',
-        'test',
         'build'
     ]);
 };
