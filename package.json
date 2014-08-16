@@ -27,7 +27,8 @@
     "jshint-stylish": "~0.1.5",
     "load-grunt-tasks": "~0.4.0",
     "time-grunt": "~0.3.1",
-    "venus": "^2.3.4"
+    "venus": "^2.3.4",
+    "chrome-mock": "0.0.1"
   },
   "engines": {
     "node": ">=0.8.0"
