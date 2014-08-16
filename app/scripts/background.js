@@ -1,7 +1,6 @@
 'use strict';
 
-chrome.runtime.onInstalled.addListener(function (details) {
-});
+chrome.runtime.onInstalled.addListener(function (details) {});
 
 chrome.contextMenus.create({
   title: 'Make a note',
