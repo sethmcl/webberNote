@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "webberNote",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "The best note-taking software ever built in a single day.",
+    "description": "The description of the application"
+  }
+}
