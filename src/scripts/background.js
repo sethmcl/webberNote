@@ -1,20 +1,14 @@
 'use strict';
 
-chrome.runtime.onInstalled.addListener(function (details) {});
+var messages    = require('../lib/constants').messages;
+var ContextMenu = require('../lib/ContextMenu');
+var menu        = new ContextMenu();
 
-chrome.contextMenus.create({
-  title: 'Make a note',
-  type: 'normal',
-  contexts: ['selection', 'image'],
-  onclick: handleMenuClick
+chrome.runtime.onMessage.addListener(function (request, sender, respond) {
+  if (request.type === messages.GET_NOTES) {
+    respond(store.getNotes());
+  }
 });
 
-function handleMenuClick(info, tab) {
-  console.log('info:');
-  console.log(info);
-  console.log('tab:');
-  console.log(tab);
-  chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-    chrome.tabs.sendMessage(tabs[0].id, {type: 'make-note-menu-clicked'});
-  });
-}
+menu.init();
+
