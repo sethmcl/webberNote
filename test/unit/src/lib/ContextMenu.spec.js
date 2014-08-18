@@ -1,6 +1,6 @@
 /**
  * @venus-library mocha
- * @venus-include #node_modules/chrome-mock/chrome-mock-browser.js
+ * @venus-include #node_modules/chrome-mock/browser.js
  * @venus-code #lib/ContextMenu.js
  */
 describe('ContextMenu.js', function () {
@@ -15,6 +15,8 @@ describe('ContextMenu.js', function () {
     expect(window.chrome.contextMenus.create.callCount).to.be(1);
   });
 
-
-
+  it('should send the correct message on click', function () {
+    cm.onClick();
+    expect(window.chrome.tabs.sendMessage.args[0][1].type).to.be('CTX_MENU_CLICK');
+  });
 });

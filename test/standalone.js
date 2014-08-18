@@ -20,9 +20,7 @@ glob('src/lib/**/*.js', function (err, files) {
       standalone: moduleName
     });
 
-    mkdirp.sync(path.dirname(dest);
-    console.log('write', src, 'to', dest);
-
+    mkdirp.sync(path.dirname(dest));
     b.bundle().pipe(fs.createWriteStream(dest));
   });
 });
