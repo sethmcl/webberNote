@@ -5,3 +5,4 @@ doc/
 *.log
 coverage
 build
+coverage.csv

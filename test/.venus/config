@@ -5,5 +5,9 @@
     '#scripts': '../../build/scripts/',
     '#lib': '../../build/lib/',
     '#node_modules': '../../node_modules/'
+  },
+
+  includes: {
+    default: './bind_polyfill.js'
   }
 }
