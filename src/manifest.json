@@ -30,10 +30,10 @@
                 "https://*/*"
             ],
             "css": [
-                "styles/main.css"
+                "styles/contentScript.css"
             ],
             "js": [
-                "scripts/contentscript.js"
+                "scripts/contentScript.js"
             ],
             "run_at": "document_end",
             "all_frames": false
