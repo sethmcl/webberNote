@@ -46,7 +46,7 @@ module.exports = {
       }
 
       if (node.classList.length) {
-        querySelector.push(node.tagName.toLowerCase() + '.' + node.classList.join('.'));
+        querySelector.push(node.tagName.toLowerCase() + '.' + this.domListToArray(node.classList).join('.'));
       } else {
         querySelector.push(node.tagName.toLowerCase());
       }
@@ -62,6 +62,15 @@ module.exports = {
    * @returns {array}
    */
   selectorToNodes: function (selector) {
-    return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
+    return this.domListToArray(document.querySelectorAll(selector));
+  },
+
+  /**
+   * Turn a DOM list into an Array
+   * @param {list} list
+   * @returns {array}
+   */
+  domListToArray: function (list) {
+    return Array.prototype.slice.call(list, 0);
   }
 };
