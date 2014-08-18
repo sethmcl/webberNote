@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/venus test/unit -n -c"
+    "test": "./node_modules/.bin/grunt build && ./node_modules/.bin/venus test/unit -n -c"
   },
   "author": "Steven Foote & Seth McLaughlin",
   "private": true,
