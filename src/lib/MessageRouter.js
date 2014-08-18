@@ -1,12 +1,12 @@
 var EventEmitter = require('events').EventEmitter;
 var util = require('util');
 
-module.exports = MessageHandler;
+module.exports = MessageRouter;
 
 /**
  * @constructor
  */
-function MessageHandler() {
+function MessageRouter() {
   chrome.runtime.onMessage.addListener(function (request, sender, respond) {
     this.emit(request.type, {
       request: request,
@@ -16,11 +16,11 @@ function MessageHandler() {
   }.bind(this));
 }
 
-util.inherits(MessageHandler, EventEmitter);
+util.inherits(MessageRouter, EventEmitter);
 
 /**
  */
-MessageHandler.prototype.emit = function (type, data, respond) {
+MessageRouter.prototype.send = function (type, data, respond) {
 
   if (typeof data === 'function') {
     respond = data;

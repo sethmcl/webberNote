@@ -5,7 +5,8 @@
     "no-use-before-define": 0,
     "no-underscore-dangle": 1,
     "no-unused-vars": [1, {"vars": "all", "args": "none"}],
-    "strict": 0
+    "strict": 0,
+    "no-alert": 0
   },
 
   "env": {
@@ -14,6 +15,7 @@
   },
 
   "globals": {
-    "chrome": true
+    "chrome": true,
+    "Promise": true
   }
 }

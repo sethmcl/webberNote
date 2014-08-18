@@ -1,14 +1,13 @@
 'use strict';
 
-var messages    = require('../lib/constants').messages;
-var ContextMenu = require('../lib/ContextMenu');
-var menu        = new ContextMenu();
+var messages       = require('../lib/constants').messages;
+var MessageRouter  = require('../lib/MessageRouter');
+var ContextMenu    = require('../lib/ContextMenu');
+var Store          = require('../lib/Store');
 
-chrome.runtime.onMessage.addListener(function (request, sender, respond) {
-  if (request.type === messages.GET_NOTES) {
-    respond(store.getNotes());
-  }
-});
+var menu           = new ContextMenu();
+var router         = new MessageRouter();
+var store          = new Store(router);
 
 menu.init();
-
+store.init();
